@@ -18,11 +18,8 @@ Student: Rohan Muslekar, 101006689.
 | `scripts/record-demo.sh` | shot lists and a live kube watch for recording the two videos |
 | `REPORT.md` | the report source |
 | `build_report.py` | renders `REPORT.md` to printable black-and-white HTML |
-| `RUNBOOK.md` | step-by-step: what to run, what to click, what to screenshot |
 
 ## Quick start
-
-Everything is in `RUNBOOK.md`. Short version:
 
 ```bash
 mvn clean test -f ./BinaryCalculatorWebapp/pom.xml   # sanity check
@@ -31,4 +28,4 @@ mvn clean test -f ./BinaryCalculatorWebapp/pom.xml   # sanity check
 python3 build_report.py                              # build the report
 ```
 
-The `BinaryCalculatorWebapp`, `Jenkinsfile`, `Jenkinsfile_v2`, `Dockerfile`, and `jenkins/values.yaml` are the lab-provided files, kept verbatim. Everything else (`k8s/`, `scripts/`, report tooling, runbook) is added for reproducibility.
+The `BinaryCalculatorWebapp`, `Jenkinsfile`, `Jenkinsfile_v2`, `Dockerfile`, and `jenkins/values.yaml` are the lab-provided files, kept verbatim. Everything else (`k8s/`, `scripts/`, report tooling) is added for reproducibility.

@@ -1,0 +1,26 @@
+# Declarative equivalent of the Jenkinsfile_v2 "deployment" stage.
+# The lab pipeline uses imperative "kubectl create deployment"; this manifest
+# is the same thing in a form you can read, diff, and re-apply with
+# "kubectl apply -f k8s/". Replace IMAGE_PATH with your Artifact Registry
+# image, e.g. us-central1-docker.pkg.dev/<project>/<repo>/binarycalculatorwebapp
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: binarycalculator-deployment
+  labels:
+    app: binarycalculator
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: binarycalculator
+  template:
+    metadata:
+      labels:
+        app: binarycalculator
+    spec:
+      containers:
+        - name: binarycalculator
+          image: IMAGE_PATH
+          ports:
+            - containerPort: 8080

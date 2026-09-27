@@ -1,0 +1,17 @@
+# GCP service account keys. Never commit a credential.
+service_account.json
+*-compute@*.json
+
+# Maven build output
+target/
+BinaryCalculatorWebapp/target/
+
+# Generated report artifacts (source is REPORT.md)
+101006689-a3-report.html
+101006689-a3-report.pdf
+
+# Editor / OS
+.idea/
+.vscode/
+*.iml
+.DS_Store

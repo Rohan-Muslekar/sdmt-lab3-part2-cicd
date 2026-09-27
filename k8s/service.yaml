@@ -1,0 +1,17 @@
+# Declarative equivalent of the Jenkinsfile_v2 "service" stage.
+# Same as "kubectl expose deployment ... --type=LoadBalancer". GKE provisions
+# an external IP; open http://<EXTERNAL-IP>:8080 in a browser to reach the app.
+apiVersion: v1
+kind: Service
+metadata:
+  name: binarycalculator-service
+  labels:
+    app: binarycalculator
+spec:
+  type: LoadBalancer
+  selector:
+    app: binarycalculator
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 8080
